@@ -12,8 +12,8 @@ from tempfile import TemporaryDirectory
 from typing import Optional
 
 MECAB_KO_URL = "https://bitbucket.org/eunjeon/mecab-ko/downloads/mecab-{mecab_version}-ko-{mecab_ko_version}.tar.gz"
-CONFIG_GUESS_URL = "http://git.savannah.gnu.org/gitweb/?p=config.git;a=blob_plain;f=config.guess;hb=HEAD"
-CONFIG_SUB_URL = "http://git.savannah.gnu.org/gitweb/?p=config.git;a=blob_plain;f=config.sub;hb=HEAD"
+CONFIG_GUESS_URL = "https://raw.githubusercontent.com/XXXXRT666/python-mecab-ko/main/scripts/config.guess"
+CONFIG_SUB_URL = "https://raw.githubusercontent.com/XXXXRT666/python-mecab-ko/main/scripts/config.sub"
 
 
 def parse_arguments() -> argparse.Namespace:
@@ -82,8 +82,8 @@ def fetch(url: str):
     download(url, "mecab-ko.tar.gz")
     subprocess.run(["tar", "-xz", "--strip-components=1", "-f", "mecab-ko.tar.gz"], check=True)
 
-    # download(CONFIG_GUESS_URL, "config.guess")
-    # download(CONFIG_SUB_URL, "config.sub")
+    download(CONFIG_GUESS_URL, "config.guess")
+    download(CONFIG_SUB_URL, "config.sub")
 
 
 def build(prefix: Optional[str] = None):
