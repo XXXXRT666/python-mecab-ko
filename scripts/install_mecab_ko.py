@@ -82,8 +82,8 @@ def fetch(url: str):
     download(url, "mecab-ko.tar.gz")
     subprocess.run(["tar", "-xz", "--strip-components=1", "-f", "mecab-ko.tar.gz"], check=True)
 
-    download(CONFIG_GUESS_URL, "config.guess")
-    download(CONFIG_SUB_URL, "config.sub")
+    # download(CONFIG_GUESS_URL, "config.guess")
+    # download(CONFIG_SUB_URL, "config.sub")
 
 
 def build(prefix: Optional[str] = None):
