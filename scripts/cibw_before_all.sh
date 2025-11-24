@@ -6,8 +6,8 @@ PROJECT="$1"
 PLATFORM=$(python -c "import platform; print(platform.system())")
 
 echo "PROJECT: ${PROJECT}"
-which config.guess
-which config.sub
+which config.guess || true
+which config.sub || true
 
 mv "${PROJECT}/scripts/config.guess" "./config.guess"
 mv "${PROJECT}/scripts/config.sub" "./config.sub"
