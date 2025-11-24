@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [tool.cibuildwheel]
 build = "cp39-* cp310-* cp311-* cp312-* cp313-* cp314-*"
 skip = "*-musllinux*"
-test-skip = ["*-*linux_aarch64", "*-macosx_arm64 *-macosx_*_universal2", "*-win_arm64"]
+test-skip = ["*-*linux_aarch64", "*-macosx_arm64", "*-win_arm64"]
 
 before-all = "bash scripts/cibw_before_all.sh {package}"
 build-verbosity = 1
