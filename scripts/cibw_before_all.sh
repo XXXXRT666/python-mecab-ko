@@ -5,6 +5,9 @@ set -ex
 PROJECT="$1"
 PLATFORM=$(python -c "import platform; print(platform.system())")
 
+mv "${PROJECT}/scripts/config.guess" "${PROJECT}/config.guess"
+mv "${PROJECT}/scripts/config.sub" "${PROJECT}/config.sub"
+
 linux_install_mecab() {
     python ${PROJECT}/scripts/install_mecab_ko.py
 }
